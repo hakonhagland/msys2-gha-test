@@ -1,0 +1,21 @@
+name: msys2-test
+on: [push, pull_request]
+jobs:
+  perl-test:
+    runs-on: windows-2019
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          release: true
+          msystem: MSYS
+          path-type: minimal
+          install: >-
+            base-devel gcc cmake git libcrypt-devel libreadline tree
+      - name: testing
+        run: |
+          uname -a
+
