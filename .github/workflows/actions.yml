@@ -18,4 +18,10 @@ jobs:
       - name: testing
         run: |
           uname -a
+          perl --version
+          cpan App::cpanminus
+          cpanm -n Net::SSLeay
+          cpanm Alien::GSL
+          cpanm Module::Build
+
 
