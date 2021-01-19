@@ -23,7 +23,7 @@ jobs:
           perl --version
           cpan App::cpanminus
           cpanm -v Path::Tiny
-          cpanm -n Net::SSLeay
+          cpanm -v Alien::Base
           cpanm Alien::GSL
           cpanm Module::Build
 
