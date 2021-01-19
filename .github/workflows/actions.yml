@@ -16,10 +16,13 @@ jobs:
           install: >-
             base-devel gcc cmake git libcrypt-devel libreadline tree
       - name: testing
+        env:
+          MSYS: winsymlinks:nativestrict
         run: |
           uname -a
           perl --version
           cpan App::cpanminus
+          cpanm -v Path::Tiny
           cpanm -n Net::SSLeay
           cpanm Alien::GSL
           cpanm Module::Build
